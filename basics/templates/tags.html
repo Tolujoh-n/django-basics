@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% if greeting == 1 %}
+    <h1>Hello World</h1>
+    {% elif greeting == 2 %}
+    <h1>Welcome sir</h1>
+    {% else %}
+    <h1>Bye</h1>
+    {% endif %}
+    <hr>
+
+    <h1>Hello {{ firstname }}</h1>
+
+    <hr>
+    {% if greeting %}
+    <h1>The greeting context exist</h1>
+    {% endif %}
+
+    <hr>
+    {% if greeting == 2 %}
+    <h1>Hello World</h1>
+    {% elif greeting == 1 %}
+    <h1>Welcome sir</h1>
+    {% else %}
+    <h1>Bye</h1>
+    {% endif %}
+
+
+    <hr>
+    {% if greeting == 1 and day == "friday" %}
+    <h1>Hello Weekend</h1>
+    {% endif %}
+
+    <hr>
+    {% if greeting == 2 or day == "friday" %}
+    <h1>Hello the friday</h1>
+    {% endif %}
+
+    <hr>
+    {% if greeting == 1 and day == "friday" or greeting == 5 %}
+    <h1>Someone on the line</h1>
+    {% endif %}
+
+    <hr>
+    {% if 'banana' in fruits %}
+    <h1>Banana is present</h1>
+    {% else %}
+    <h1>Good Bye</h1>
+    {% endif %}
+
+    <hr>
+    {% if 'banana' not in fruits %}
+    <h1>Banana is present</h1>
+    {% else %}
+    <h1>Good Bye</h1>
+    {% endif %}
+
+    <hr>
+    <p>The two object have the same value but is it the same object <b>Using is operator</b></p>
+    {% if x is y %}
+    <h1>YES</h1>
+    {% else %}
+    <h1>NO</h1>
+    {% endif %}
+
+    <hr>
+    <p>The two object have the same value but is it the same object <b>Using == operator</b></p>
+    {% if x == y %}
+    <h1>YES</h1>
+    {% else %}
+    <h1>NO</h1>
+    {% endif %}
+
+    <p>To check if two object are the same. The <b>IS</b> operator is diffrent from the <b>==</b> operator. Because the <b>==</b> operator checks the value of the two object But the <b>IS</b> operator checks the identity of the two objects</p>
+
+
+    <hr>
+    <h2>How can two object be the same?</h2>
+    <p>If you have two objects that points to the same objects the the <b>IS</b> operator evaluates to true</p>
+
+    <hr>
+    <p>To check if the object are not the same</b></p>
+    {% if x is not y %}
+    <h1>YES</h1>
+    {% else %}
+    <h1>NO</h1>
+    {% endif %}
+
+
+    <hr>
+    <p>To test this using variables in the templates</b></p>
+    {% with var1=x var2=x %}
+    {% if var1 is var2 %}
+    <h1>YES</h1>
+    {% else %}
+    <h1>NO</h1>
+    {% endif %}
+    {% endwith %}
+    
+
+
+
+</body>
+</html>
